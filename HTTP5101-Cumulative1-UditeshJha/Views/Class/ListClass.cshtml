@@ -1,0 +1,17 @@
+﻿@model IEnumerable<HTTP5101_Cumulative1_UditeshJha.Models.Class>
+
+@{
+    ViewBag.Title = "ListClass";
+}
+
+<h2>List of Classes</h2>
+<p>This page will show information about all classes</p>
+<div id="containerlist">
+
+    @foreach (var cl in Model)
+    {
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Class/ShowClass/@cl.ClassId"> @cl.ClassCode </a></div>
+        </div>
+    }
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTTP5101-Cumulative1-UditeshJha", "HTTP5101-Cumulative1-UditeshJha\HTTP5101-Cumulative1-UditeshJha.csproj", "{104DE0A8-97E7-4B32-9899-09E1F5A49027}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{104DE0A8-97E7-4B32-9899-09E1F5A49027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104DE0A8-97E7-4B32-9899-09E1F5A49027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104DE0A8-97E7-4B32-9899-09E1F5A49027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104DE0A8-97E7-4B32-9899-09E1F5A49027}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98293926-50A4-4A6A-9F2D-802FF049D061}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HTTP5101_Cumulative1_UditeshJha.Models.Teacher>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div id="containerlist">
+    <h2>List of Teacher</h2>
+    <p>This page will show information about all teachers</p>
+    <form action="/Teacher/List" method="get">
+        <input type="text" placeholder="Search By Name or Hire Date or Salary" name="SearchKey" size="40"/>
+        <input type="submit" value="search" />
+    </form>
+    @foreach (var teacher in Model)
+    {
+<div class="listitem row">
+    <div class="col-md-12"><a href="/Teacher/Show/@teacher.TeacherId"> @teacher.TeacherFname @teacher.TeacherLname</a></div>
+    <div class="col-md-12"> Hire Date : @teacher.HireDate</div>
+    <div class="col-md-12"> Salary : @teacher.Salary</div>
+</div>
+    }
+
+</div>

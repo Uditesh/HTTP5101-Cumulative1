@@ -1,0 +1,17 @@
+﻿@model HTTP5101_Cumulative1_UditeshJha.Models.Teacher
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<a class="navlink" href="/Teacher/List">Back To Teachers</a>
+<div id="containershow">
+    <h2>Show Teacher</h2>
+    <p>Name: @Model.TeacherFname @Model.TeacherLname</p>
+    <p>Id : @Model.TeacherId</p>
+    <p>Employee Number : @Model.EmployeeNumber</p>
+    <p>Hire Date : @Model.HireDate</p>
+    <p>Salary : @Model.Salary</p>
+    <p>Course Taught : @Model.ClassName</p>
+</div>
+
