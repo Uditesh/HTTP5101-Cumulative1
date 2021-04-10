@@ -37,10 +37,10 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
 
             //SQL QUERY
             cmd.CommandText = "Select * from teachers where lower(teacherfname) like " +
-                "lower('%" + SearchKey 
-                + "%') or lower(teacherlname) like lower('%" +SearchKey+ "%')" +
-                "or hiredate like '%" + SearchKey+ "%'" +
-                "or salary like '%" + SearchKey + "%'";
+                "lower(@key) or lower(teacherlname) like lower(@key)" +
+                "or hiredate like (@key) or salary like (@key)";
+            cmd.Parameters.AddWithValue("@key","%" +SearchKey+"%");
+            cmd.Prepare();
 
             //Gather Result Set of Query into a variable
             MySqlDataReader ResultSet = cmd.ExecuteReader();
