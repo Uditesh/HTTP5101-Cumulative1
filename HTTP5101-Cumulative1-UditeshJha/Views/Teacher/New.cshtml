@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+
+
+<h2>New Teacher</h2>
+<form action="/Teacher/Create" method="post" name="newForm">
+
+    @* Client side validation try *@
+    @*if(@ViewBag.Name != null)*@
+    <div>
+        <label for="TeacherFname">First Name :</label>
+        <input type="text" name="TeacherFname" id="TeacherFname" />
+    </div>
+    <div class="inputrow">
+        <label for="TeacherLname">Last Name :</label>
+        <input type="text" name="TeacherLname" id="TeacherLname" />
+    </div>
+    <div class="inputrow">
+        <label for="EmployeeNumber">Employee Number :</label>
+        <input type="text" name="EmployeeNumber" id="EmployeeNumber" />
+    </div>
+    <div class="inputrow">
+        <label for="HireDate">Hire Date :</label>
+        <input type="text" name="HireDate" id="HireDate" />
+    </div>
+    <div class="inputrow">
+        <label for="Salary">Salary :</label>
+        <input type="number" name="Salary" id="Salary" step="any" />
+    </div>
+    <div>
+        <input type="submit" value="Create Teacher" />
+    </div>
+</form>
+
+
+@* Client side validation try *@
+
+@*<script>
+    var formHandle = document.forms.newForm;
+    formHandle.onsubmit = formSubmit;
+    function formSubmit() {
+        var TeacherFname = formHandle.TeacherFname;
+        var TeacherLname = formHandle.TeacherLname;
+        if (TeacherFname != null && TeacherLname != null) {
+
+        }
+    }
+</script>*@

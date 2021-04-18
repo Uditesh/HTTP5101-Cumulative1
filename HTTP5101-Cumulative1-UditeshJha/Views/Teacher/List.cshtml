@@ -5,19 +5,22 @@
 }
 
 <div id="containerlist">
+    <div>
+        <a href="/Teacher/New">New Teacher</a>
+    </div>
     <h2>List of Teacher</h2>
     <p>This page will show information about all teachers</p>
     <form action="/Teacher/List" method="get">
-        <input type="text" placeholder="Search By Name or Hire Date or Salary" name="SearchKey" size="40"/>
+        <input type="text" placeholder="Search By Name or Hire Date or Salary" name="SearchKey" size="100" />
         <input type="submit" value="search" />
     </form>
     @foreach (var teacher in Model)
     {
-<div class="listitem row">
-    <div class="col-md-12"><a href="/Teacher/Show/@teacher.TeacherId"> @teacher.TeacherFname @teacher.TeacherLname</a></div>
-    <div class="col-md-12"> Hire Date : @teacher.HireDate</div>
-    <div class="col-md-12"> Salary : @teacher.Salary</div>
-</div>
+        <div class="listitem row">
+            <div class="col-md-12"><a href="/Teacher/Show/@teacher.TeacherId"> @teacher.TeacherFname @teacher.TeacherLname</a></div>
+            <div class="col-md-12"> Hire Date : @teacher.HireDate.ToString("dd-MMM-yyyy")</div>
+            <div class="col-md-12"> Salary : @teacher.Salary</div>
+        </div>
     }
 
 </div>

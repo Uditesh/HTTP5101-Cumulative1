@@ -13,7 +13,7 @@ namespace HTTP5101_Cumulative1_UditeshJha
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.EnableCors();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{actions}/{id}",

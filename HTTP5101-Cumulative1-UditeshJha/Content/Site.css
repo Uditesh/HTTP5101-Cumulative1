@@ -3,6 +3,10 @@
     padding-bottom: 20px;
 }
 
+h2{
+    font-size:35px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -16,20 +20,34 @@ textarea {
     max-width: 280px;
 }
 
-.navlink {
-    text-align: right;
-    margin-top: 30px;
+.navteacher {
+    overflow: hidden;
+    margin-bottom:20px;
+}
+
+.dellink{
+    color: red;
     float: right;
 }
 
+.navlink {
+    float: left;
+}
+
+.deletebutton{
+    background-color:red;
+    color:white;
+    border:1px solid black;
+}
+
 #containerlist, #containershow {
-    background-color: #ccc;
+    font-size: 20px;
     width: 90%;
     margin: 0 auto;
     margin-top: 80px;
 }
 
 .listitem {
-    background-color: #ccc; 
+ 
     margin: 10px 0;
 }
