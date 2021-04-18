@@ -72,17 +72,16 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
                 Teacher newTeacher = new Teacher();
                 newTeacher.TeacherFname = TeacherFname;
                 newTeacher.TeacherLname = TeacherLname;
+                if (newTeacher.TeacherFname == null || newTeacher.TeacherLname == null)
+                    {
+                        return RedirectToAction("New");
+                    }
                 newTeacher.EmployeeNumber = EmployeeNumber;
                 newTeacher.HireDate = HireDate;
                 newTeacher.Salary = Salary;
 
                 TeacherDataController controller = new TeacherDataController();
-                controller.AddTeacher(newTeacher);
-                
-                if(newTeacher.TeacherFname == null || newTeacher.TeacherLname == null)
-                    {
-                        return RedirectToAction("New");
-                    }
+                controller.AddTeacher(newTeacher);     
                 return RedirectToAction("List");
             //}
         }

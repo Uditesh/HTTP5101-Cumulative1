@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Ajax_Delete";
+}
+
+<h2>Teacher Delete</h2>
+<div id="containershow">
+
+    <div>
+        <a href="/Teacher/Show/@Model.TeacherId">Cancel</a>
+    </div>
+    <h2>Are you sure you want to delete @Model.TeacherFname @Model.TeacherLname?</h2>
+    <p>This Method can not be undone!</p>
+    @{
+        //AddTeacher() is a JS method defined in /Scripts/teachers.js
+    }
+    <button onclick="DeleteTeacher();">Delete Teacher</button>
+
+</div>
+

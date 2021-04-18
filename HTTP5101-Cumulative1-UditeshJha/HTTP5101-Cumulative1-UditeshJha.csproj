@@ -282,6 +282,7 @@
     <Content Include="Views\Teacher\DeleteConfirmTeacher.cshtml" />
     <Content Include="Views\Teacher\New.cshtml" />
     <Content Include="Views\Teacher\Ajax_Add.cshtml" />
+    <Content Include="Views\Teacher\Ajax_Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,16 +10,16 @@ namespace HTTP5101_Cumulative1_UditeshJha.Models
     {
         public int TeacherId;
         /* server side validation */
-        [Required]
+        [Required(ErrorMessage = "Enter first name")]
         public string TeacherFname;
-        [Required]
+        [Required(ErrorMessage = "Enter last name")]
         public string TeacherLname;
-        [Required]
+        [Required(ErrorMessage = "Enter Employee Number")]
         public string EmployeeNumber;
-        [Required]
+        [Required(ErrorMessage = "Enter Date Time")]
         [DataType(DataType.DateTime)]
         public DateTime HireDate;
-        [Required]
+        [Required(ErrorMessage = "Enter Salary")]
         public decimal Salary;
         public Teacher() { }
     }
