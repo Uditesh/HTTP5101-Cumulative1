@@ -189,5 +189,41 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
             cmd.ExecuteNonQuery();
             Conn.Close();
         }
+
+        /// <summary>
+        ///  Update a teacher by Id
+        /// </summary>
+        /// <param name="id">The id of the teacher which is to be updated.</param>
+        /// <param name="teacherData">Its a data of the teacher.</param>
+        /// <returns>
+        ///  Returns nothing
+        /// </returns>
+        [HttpPost]
+        public void UpdateTeacher(int id, [FromBody] Teacher teacherData)
+        {
+            //Create an instance of a connection
+            MySqlConnection Conn = School.AccessDatabase();
+
+            //Open the connection between the web server and database
+            Conn.Open();
+
+            //Establish a new command (query) for our database
+            MySqlCommand cmd = Conn.CreateCommand();
+
+            //SQL query
+            cmd.CommandText = "UPDATE teachers set " +
+                "teacherfname = @fname , teacherlname = @lname," + "employeenumber = @enum"+
+                ", salary = @salary " +
+                "where teacherid = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@fname", teacherData.TeacherFname);
+            cmd.Parameters.AddWithValue("@lname", teacherData.TeacherLname);
+            cmd.Parameters.AddWithValue("@enum", teacherData.EmployeeNumber);
+            cmd.Parameters.AddWithValue("@salary", teacherData.Salary);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+            Conn.Close();
+
+        }
     }
 }

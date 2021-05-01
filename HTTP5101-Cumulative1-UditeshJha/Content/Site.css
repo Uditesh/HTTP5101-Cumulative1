@@ -51,3 +51,11 @@ textarea {
  
     margin: 10px 0;
 }
+
+.update-link{
+    margin-left: 70px;
+}
+
+#errorMsg {
+    color: red;
+}

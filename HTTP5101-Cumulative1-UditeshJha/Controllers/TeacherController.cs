@@ -19,6 +19,7 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
         // GET: Teacher/List
         public ActionResult List(string SearchKey = null)
         {
+            //Creates a instance of Controller.
             TeacherDataController controller = new TeacherDataController();
             IEnumerable<Teacher> Teachers = controller.ListTeachers(SearchKey);
             return View(Teachers);
@@ -35,6 +36,7 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
         // GET: Teacher/DeleteTeacherConfirm/{id}
         public ActionResult DeleteConfirmTeacher(int id)
         {
+            //Creates a instance of Controller.
             TeacherDataController controller = new TeacherDataController();
             Teacher Teacher = controller.FindTeacher(id);
             return View(Teacher);
@@ -69,10 +71,13 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
                 Debug.WriteLine(EmployeeNumber);
                 Debug.WriteLine(HireDate);
                 Debug.WriteLine(Salary);
+
+                //Creates a instance of Teacher.
                 Teacher newTeacher = new Teacher();
                 newTeacher.TeacherFname = TeacherFname;
                 newTeacher.TeacherLname = TeacherLname;
-                if (newTeacher.TeacherFname == null || newTeacher.TeacherLname == null)
+            // Server side validation
+            if (newTeacher.TeacherFname == null || newTeacher.TeacherLname == null)
                     {
                         return RedirectToAction("New");
                     }
@@ -80,10 +85,49 @@ namespace HTTP5101_Cumulative1_UditeshJha.Controllers
                 newTeacher.HireDate = HireDate;
                 newTeacher.Salary = Salary;
 
+                //Creates a instance of Controller.
                 TeacherDataController controller = new TeacherDataController();
                 controller.AddTeacher(newTeacher);     
                 return RedirectToAction("List");
             //}
+        }
+
+        //GET: /Teacher/Update/{id}
+        public ActionResult Update(int id)
+        {
+            //Creates a instance of Controller.
+            TeacherDataController controller = new TeacherDataController();
+
+            // Calls the find teacher method of the conrtoller.
+            Teacher selectedTeacher = controller.FindTeacher(id);
+
+            //Returns the evalute result.
+            return View(selectedTeacher);
+        }
+
+
+        //POST : /Teacher/Update{id}
+        [HttpPost]
+        public ActionResult Update(int id, string TeacherFname, string TeacherLname, string EmployeeNumber, decimal Salary)
+        {
+            Teacher TeacherData = new Teacher();
+            // Server side validation
+            if (TeacherFname == "" || TeacherLname == "")
+            {
+                return RedirectToAction("Update");
+            }
+            else
+            {
+                TeacherData.TeacherId = id;
+                TeacherData.TeacherFname = TeacherFname;
+                TeacherData.TeacherLname = TeacherLname;
+                TeacherData.EmployeeNumber = EmployeeNumber;
+                TeacherData.Salary = Salary;
+                
+                TeacherDataController controller = new TeacherDataController();
+                controller.UpdateTeacher(id, TeacherData);
+                return RedirectToAction("/Show/" + id);
+            }
         }
 
     }
